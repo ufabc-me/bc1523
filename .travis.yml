@@ -6,6 +6,9 @@ deploy:
   provider: releases
   api_key:
     secure: kco1J+Q+IxiUJR/zTMWwVwwhE/7c/mDPk2xBHre2E/2Uf0slB2XgwlxfMLAeYrE23GVFc6ZZaOADo9+gGPnZbFOmL7uwcUwHseVyunYS0Dbt8lqHB9QiGY2LDvKp9LDvUcWXUMhw1W4mw+6V9135U6DTuB/P6gZUJTIz0VpK8sXRVzy/N/ddgDWo/KFRj/98LQFgz8aL+lwdhb85G8GJOq+/y1COpq0N7OzINeqzcaMVYpwfDPYgqYCpqb5sT1q5Tcojh2qywhHJx3pGaiYTN8/dt2Ihdm8i7+4jvnYbV9RPErIh/RZXoCGDyCjD2X7PZnxglGybAT9/VbKRT9uE8fhgWwoSn9GgwN/LWoZVvcENuL+62EvdG99P9/w1dg7ScKHgMr85seoRq6XcvEKvM+hSRo27zXZvkyAbVEW1rg5ZtIqyyHCYvQkuQALqhaIUQtuVyEWsYWJrntDWxc42lw9Ms/9zNV4Ik4g7kw/x4ENBlHufyKJsXGCxTi91n42vmL9BFBIel+MwdWN73bmJxX668Ze4GOGVndl5KpeJFCcSLoA2hXujDmkOw1KINlu0EsHdKABnVlIFHrva5S5wsLPCAr5ruEH/QF1UEyfKdS7D+5JWvgJKPP4UsrwmlGu281L30qoxkCccWzV88eQceWp5zxd3GIgdBElCMNNvGb4=
-  file: ''
+  file:
+  - _build/your_file_1.pdf
+  - _build/your_file_2.pdf
+  skip_cleanup: true
   on:
     repo: ufabc-me/bc1523
