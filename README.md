@@ -5,6 +5,8 @@ Por exemplo, o [tex/samplefile.tex](https://github.com/ufabc-me/bc1523/blob/mast
 
 [Verifiquem o sucesso da build pelo Travis](https://travis-ci.org/ufabc-me/bc1523)
 
+[Página sobre LaTeX do GradMat](http://gradmat.ufabc.edu.br/index.php/modelos-em-latex)
+
 * https://travis-ci.org/cdlm/github-travis-latex
 * https://github.com/cdlm/github-travis-latex
 * https://github.com/travis-ci/dpl/issues/162
