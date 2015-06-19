@@ -8,3 +8,4 @@ Por exemplo, o [tex/samplefile.tex](https://github.com/ufabc-me/bc1523/blob/mast
 * https://travis-ci.org/cdlm/github-travis-latex
 * https://github.com/cdlm/github-travis-latex
 * https://github.com/travis-ci/dpl/issues/162
+* http://harshjv.github.io/blog/setup-latex-pdf-build-using-travis-ci/
