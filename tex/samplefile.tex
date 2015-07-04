@@ -6,7 +6,7 @@
 
 
 
-\centerline{\sc \large A Simple foobar Sample \LaTeX\ File}
+\centerline{\sc \large Segurança em Bancos de Dados }
 \vspace{.5pc}
 \centerline{\sc Stupid Stuff I Wish Someone Had Told Me Four Years Ago}
 \centerline{\it (Read the .tex file along with this or it won't 
@@ -18,9 +18,9 @@
 
 Tecnologias de banco de dados são o componente principal de muitos sistemas de computação. Elas permitem que a informação seja retida e compartilhada eletronicamente e a quantidade de informação armazenada nesses sistemas continua a crescer à uma taxa exponencial.[1]
 
-Porém, danos e uso indevido de dados afetam não apenas um único usuário ou aplicação, mas pode ter consequências desastrosas para toda a organização. A proliferação rápida de aplicações baseadas na web e sistemas de informação aumentou ainda mais o risco de exposição de bancos de dados e, assim, a proteção de dados é hoje mais crucial do que nunca.
+Porém, danos e uso indevido de dados afetam não apenas um único usuário ou aplicação, mas pode ter consequências desastrosas para toda a organização. A proliferação rápida de aplicações baseadas na web e sistemas de informação aumentou ainda mais o risco de exposição de bancos de dados e, assim, a proteção de dados é hoje mais crucial do que nunca.[2]
 
-Brechas de segurança são tipicamente categorizadas como observação não autorizada de dados, modificação incorreta de dados, e indisponibilidade de dados.  Observação não autorizada de dados resulta em revelação de informação para usuários sem dinheiro de ganhar acesso a tal informação. Todas as organizações, variando de organizações comerciais para organizações sociais, numa variedade de domínios podem sofrer grandes perdas tanto do ponto de vista financeiro como humano como consequências da observação não autorizada de dados.
+Brechas de segurança são tipicamente categorizadas como observação não autorizada de dados, modificação incorreta de dados, e indisponibilidade de dados.  Observação não autorizada de dados resulta em revelação de informação para usuários sem dinheiro de ganhar acesso a tal informação. Todas as organizações, variando de organizações comerciais para organizações sociais, numa variedade de domínios podem sofrer grandes perdas tanto do ponto de vista financeiro como humano como consequências da observação não autorizada de dados.[2]
 
 Modificação incorreta de dados, tanto intencional como não intencional, resulta em um estado incorreto no banco de dados. Qualquer uso de dados incorretos pode resultar em grandes perdas para a organização. Quando a informação está indisponível, informação crucial para o funcionamento adequado da organização não está prontamente disponível quando preciso.[2]
 
@@ -28,22 +28,23 @@ Assim, uma solução completa para a segurança de dados deve atender os seguint
 
 1)	Sigilo ou confidencialidade refere-se a proteção dos dados contra revelação não autorizada, 2) integridade refere-se a prevenção da modificação imprópria de dados não autorizada, e 3) disponibilidade refere-se a prevenção e recuperação do hardware e software de erros e de negações de acesso de dados maliciosas tornando o banco de dados indisponível.
 
-Esses três requisitos surgem em praticamente todos os ambientes de aplicação, e para atender a estes requisitos são utilizadas diversas técnicas, que serão abordadas neste artigo.
+Esses três requisitos surgem em praticamente todos os ambientes de aplicação, e para atender a estes requisitos são utilizadas diversas técnicas, que serão abordadas neste artigo.[2]
 
 \section{Um pouco de história}
 
-Os primeiros esforços em pesquisa na área de modelos de controle de acesso e confidencialidade para DBMSs (database management systems) focaram no desenvolvimento de duas diferentes classes de modelos, baseados na política de controle de acesso discricionário e na política de controle de acesso mandatório. Essa primeira pesquisa foi lançada na estrutura dos sistemas de banco de dados relacionais.
+Os primeiros esforços em pesquisa na área de modelos de controle de acesso e confidencialidade para DBMSs (database management systems) focaram no desenvolvimento de duas diferentes classes de modelos, baseados na política de controle de acesso discricionário e na política de controle de acesso mandatório. Essa primeira pesquisa foi lançada na estrutura dos sistemas de banco de dados relacionais.[2]
 
-O modelo de dados relacionado, sendo um modelo declarativo de alto-nível especificando a estrutura lógica dos dados, fez o desenvolvimento de linguagens declarativas simples para a especificação de políticas de controle de acesso possível. Esses primeiros modelos e os modelos discricionários em particular, introduziram alguns princípios importantes que separam os modelos de controle de acesso para sistemas de banco de dados de modelos de controle de acesso adotados por sistemas operacionais e sistemas de arquivos.
+O modelo de dados relacionado, sendo um modelo declarativo de alto-nível especificando a estrutura lógica dos dados, fez o desenvolvimento de linguagens declarativas simples para a especificação de políticas de controle de acesso possível. Esses primeiros modelos e os modelos discricionários em particular, introduziram alguns princípios importantes que separam os modelos de controle de acesso para sistemas de banco de dados de modelos de controle de acesso adotados por sistemas operacionais e sistemas de arquivos.[2]
 
-O primeiro princípio era que modelos de controle de acesso para bancos de dados deveriam ser expressos em termos do modelo lógico de dados; assim autorizações para um banco de dados relacional deveria ser expresso em termos de relações, atributos de relações, e tuplas. O segundo princípio é que bancos de dados, em adição ao controle de acesso baseado em nomes, onde os objetos protegidos são especificados ao dá-los nomes, controle de acesso baseado em conteúdo deve ser suportado. Controle de acesso baseado em conteúdo permite que o sistema determine se deve dar ou negar acesso para um item de dados baseado no conteúdo desse item de dados. O desenvolvimento de controle de acesso baseado em conteúdo, que são, em geral, baseados na especificação de condições conta conteúdos de dados, tornou-se fácil em bancos de dados relacionais pela disponibilidade de linguagens de consulta declarativas, como SQL.
+O primeiro princípio era que modelos de controle de acesso para bancos de dados deveriam ser expressos em termos do modelo lógico de dados; assim autorizações para um banco de dados relacional deveria ser expresso em termos de relações, atributos de relações, e tuplas. O segundo princípio é que bancos de dados, em adição ao controle de acesso baseado em nomes, onde os objetos protegidos são especificados ao dá-los nomes, controle de acesso baseado em conteúdo deve ser suportado. Controle de acesso baseado em conteúdo permite que o sistema determine se deve dar ou negar acesso para um item de dados baseado no conteúdo desse item de dados. O desenvolvimento de controle de acesso baseado em conteúdo, que são, em geral, baseados na especificação de condições conta conteúdos de dados, tornou-se fácil em bancos de dados relacionais pela disponibilidade de linguagens de consulta declarativas, como SQL.[2]
 
-Na área de modelos de controle de acesso discricionário para sistemas de bancos de dados relacionais, uma importante contribuição foi o desenvolvimento do modelo de controle de acesso System R, que influenciou fortemente os modelos de controle de acesso dos DBMSs comerciais modernos. Algumas características chave desse modelo incluem a noção de administração de autorização descentralizada, concedimento e revogação dinâmica de autorizações, e o uso de visualizações para suportar autorizações baseadas em conteúdo.
+Na área de modelos de controle de acesso discricionário para sistemas de bancos de dados relacionais, uma importante contribuição foi o desenvolvimento do modelo de controle de acesso System R, que influenciou fortemente os modelos de controle de acesso dos DBMSs comerciais modernos. Algumas características chave desse modelo incluem a noção de administração de autorização descentralizada, concedimento e revogação dinâmica de autorizações, e o uso de visualizações para suportar autorizações baseadas em conteúdo.[2]
 
-Além disso, o formato inicial de comandos bem conhecidos para conceder e revogar autorizações, que hoje são parte do padrão SQL, foram desenvolvidos como parte desse modelo. Propostas de pesquisa posteriores estenderam esse modelo com uma variedade de características, como autorização negativa, autorização baseada em papel ou tarefa, autorização temporária e autorização ciente do contexto.
+Além disso, o formato inicial de comandos bem conhecidos para conceder e revogar autorizações, que hoje são parte do padrão SQL, foram desenvolvidos como parte desse modelo. Propostas de pesquisa posteriores estenderam esse modelo com uma variedade de características, como autorização negativa, autorização baseada em papel ou tarefa, autorização temporária e autorização ciente do contexto.[2]
 
 Modelos de acesso discricionário têm, entretanto, uma fraqueza no sentido de que eles não impõem nenhum controle sobre como a informação é propagada e usada uma vez que tenha sido acessada por indivíduos para fazê-lo. Essa fraqueza faz os controles de acesso discricionários vulneráveis a ataques maliciosos, como Trojan Horses embutidos nas aplicações de programas. Um canal secreto é qualquer componente ou característica de um sistema que é usurpada para codificar ou representar informação para transmissão não autorizada, sem violar o a política de controle de acesso estabelecida.[2]
 
+A área de controle de acesso mandatório e sistemas de bancos de dados multinível tentaram abordar esses problemas mas sem muito sucesso. Porém, muitas soluções nas pesquisas para os problemas de canais secretos foram incorporadas nos banco de dados modernos, que contam com recursos como hierarquias de herança, agregação, métodos e stored procedures, tornando-os mais seguros.
 
 \section{Controle de acesso}
 
