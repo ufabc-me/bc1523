@@ -1,4 +1,4 @@
-\documentclass{article}
+﻿\documentclass{article}
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
 
@@ -140,6 +140,35 @@ Esses três requisitos surgem em praticamente todos os ambientes de aplicação.
 \section{Um pouco de história}
 
 \section{Controle de acesso}
+
+\section{Database Audit}
+
+As técnicas de Database Auditing tem por finalidade rastrear atividades de usuário, assim como tentativas de acesso (bem ou mal sucedidas) ao banco de dados, para assim, permitir a identificação de possíveis comprometimentos a segurança do mesmo.
+
+Ao realizar esta prática é preciso atentar-se a certas informações chave que podem, ou não, indicar um comprometimento do seu banco. Dentre estas podemos destacar alterações indevidas na configuração do banco de dados, que podem ser um indício de que segurança foi violada. Vale lembrar que nem sempre tal alteração se deve realmente a intrusão de um indivíduo mal intencionado em seu sistema, no entanto certas mudanças podem gerar vulnerabilidade em seu banco, de modo que é preciso obter informações qualquer mudança de configuração ocorrida.
+
+É preciso prestar especial atenção a execução de certos comandos no banco, como adição, exclusão e alteração de privilegio dos usuários (Data Control Languagem), ou  mudanças estruturais em tabelas ou alteração de tipos de atributos (Data Definition Language).
+
+Quanto a queries DML (Data Manipulation Language), é preciso notar principalmente alterações nos dados, assim como queries ad hoc.
+
+Todas as queries acima mencionadas são executadas de maneira legitima em determinadas situações, portanto nenhuma caracteriza um comprometimento de segurança por si mesma. Assim, é preciso verificar se elas foram executadas dentro de um contexto apropriado ou não. Por exemplo caso um funcionário de uma empresa faça uma pesquisa no banco de dados por informações consideradas sensíveis, seu comportamento sera considerado normal caso ação seja condizente com suas responsabilidades na empresa, e anormal caso contrário.
+
+Para realizar a auditoria, pode se utilizar tanto funcionalidades disponibilizadas pelos próprios sistemas gerenciadores de banco de dados quanto soluções disponibilizados por terceiros.
+
+Usualmente, os sistemas de gerenciamento de banco de dados vem com estas funcionalidades desativas por default, sendo necessário a que sejam ativadas pelo DBA. Geralmente as funcionalidades nativas dos gerenciadores de banco de dados se resumem a manter um log de toda a atividade ocorrida no banco, que devem ser examinado periodicamente. Existem duas principais desvantagens de utilizar os recursos nativos. A primeira é a diminuição de desempenho que o banco de dados terá devido ao custo computacional de armazenar localmente um log de todas as atividades ocorridas no banco. A segunda é a presença de um intervalo de tempo significativo entre a atividade suspeita ser registrada no log e o responsável pelo banco tomar conhecimento desta atividade. 
+
+Soluções disponibilizadas por terceiros podem ser de 3 tipos diferentes. Podem ser baseadas em sniffar pacotes com queries SQL destinadas ao servidor de banco de dados. Podem ser baseadas apenas em software. . Ou podem ser soluções mistas, que utilizam tanto um como outro.
+
+Ao aplicar a primeira solução, sniffar a rede em busca das queries SQL enviadas ao servidor, temos alguns problemas. Uma delas é o custo alto, pois é necessário a aquisição e manutenção de hardware dedicado a tarefa de sniffar a rede. Outro problema é que, devido a conexão estar criptografada, nem sempre é possível aplicar esta solução. Fora isso ainda é preciso considerar que, nem todas as queries seram capturadas, já que qualquer  uma que seja executada direto no servidor estará fora do alcance do sniffer.
+
+Para se livrar do último problema e tentar garantir todas as queries sejam armazenadas, é possível incluir também um software no servidor para armazenar as queries feitas diretamente nele. No entanto, assim como as funcionalidades nativas do gerenciador, este software causaria uma perda de desempenho no servidor de banco de dados. 
+
+A verdadeira vantagem de se ter um soluções terceirizadas ao invés de contar com as funcionalidades nativas do gerenciador de banco de dados, reside no fato de que tais soluções contam com características que as outras não possuem. Dentre estas, podemos destacar a criação de políticas, a detecção de violação de política em tempo real, mensagens de alerta e a separação de funções.
+
+Basicamente, criação de políticas, detecção de violação de política em tempo real e as mensagens de alerta, significa que é possível criar um conjunto de regras que definam quais comportamentos são considerados normais dentro do sistema, e quais não são, que o sistema conseguira detectar em tempo real quando uma destas regras foi quebrada e que o responsável pelo banco de dados sera notificado na hora.
+
+Separação de funções significa que, ao contrário do que acontece com o com as funções nativas do gerenciador de banco de dados, quando se lida com soluções de terceiros a responsabilidade pelo monitoramento e pela administração do banco de dados estão bem separados, de modo que é possível realizar o database auditing com a menor interferência possível do DBA.
+
 
 
 
