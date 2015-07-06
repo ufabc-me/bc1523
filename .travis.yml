@@ -3,10 +3,7 @@ script:
 - pdflatex -output-directory _build tex/samplefile.tex
 
 before_install:
-  - sudo apt-get install pandoc
-  - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra 
-  - sudo apt-get install texlive-fonts-recommended texlive-fonts-extra
-  - sudo apt-get install texlive-science texlive-lang-portuguese
+  - sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive-lang-portuguese
 
 install:
   - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
