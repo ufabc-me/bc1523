@@ -8,9 +8,6 @@ before_install:
   - sudo apt-get install texlive-fonts-recommended texlive-fonts-extra
   - sudo apt-get install texlive-science texlive-lang-portuguese
 
-before_deploy: 
-  - git fetch --tags
-
 install:
   - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
 
@@ -23,6 +20,5 @@ deploy:
   skip_cleanup: true
   on:
     repo: ufabc-me/bc1523
-    tags: true
     all_branches: true
 
