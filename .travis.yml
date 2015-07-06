@@ -3,7 +3,10 @@ script:
 - pdflatex -output-directory _build tex/samplefile.tex
 
 before_install:
-  - curl -L https://raw.githubusercontent.com/krlmlr/texlive-squashfs/master/out/texlive.tar.xz | tar xJC ~
+  - sudo apt-get install pandoc
+  - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra 
+  - sudo apt-get install texlive-fonts-recommended texlive-fonts-extra
+  - sudo apt-get install texlive-science texlive-lang-portuguese
 
 before_deploy: 
   - git fetch --tags
